@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sistema
+namespace Sistema.Controller.Service
 {
-    public class Class1
+    public class ServiceVendedor
     {
+
+
+
     }
 }
