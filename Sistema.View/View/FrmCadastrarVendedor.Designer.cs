@@ -76,6 +76,7 @@
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(134, 20);
             this.txtSalario.TabIndex = 9;
+            this.txtSalario.Text = "2.300,00";
             // 
             // lblSalario
             // 
@@ -100,6 +101,7 @@
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(252, 20);
             this.txtEndereco.TabIndex = 6;
+            this.txtEndereco.Text = "Tifa Gneipel";
             // 
             // txtEmail
             // 
@@ -107,6 +109,7 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(252, 20);
             this.txtEmail.TabIndex = 5;
+            this.txtEmail.Text = "diegodnascimento@gmail.com";
             // 
             // txtNome
             // 
@@ -168,7 +171,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Location = new System.Drawing.Point(12, 204);
+            this.groupBox2.Location = new System.Drawing.Point(12, 213);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(825, 200);
             this.groupBox2.TabIndex = 4;
@@ -189,7 +192,7 @@
             this.groupBox1.Controls.Add(this.lblEndereco);
             this.groupBox1.Controls.Add(this.lblEmail);
             this.groupBox1.Controls.Add(this.lblNome);
-            this.groupBox1.Location = new System.Drawing.Point(12, 13);
+            this.groupBox1.Location = new System.Drawing.Point(12, 21);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(825, 184);
             this.groupBox1.TabIndex = 3;

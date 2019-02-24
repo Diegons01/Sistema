@@ -28,7 +28,6 @@ namespace Sistema.View.View
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

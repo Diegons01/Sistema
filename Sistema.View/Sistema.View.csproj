@@ -35,7 +35,14 @@
     <ApplicationIcon>construction.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migration.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\FrmCadastrarVendedor.cs">
@@ -78,6 +87,7 @@
     <EmbeddedResource Include="View\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,6 +112,20 @@
     <None Include="Resources\Novo1.png" />
     <None Include="Resources\Novo.png" />
     <None Include="Resources\Vendedor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dados.EntityFramework\Dados.EntityFramework.csproj">
+      <Project>{f588c327-8809-4d7d-ba94-0fa4fa53bc9d}</Project>
+      <Name>Dados.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Controller\Sistema.Controller.csproj">
+      <Project>{ec264cdc-0ff6-4972-8e9b-8130322285d9}</Project>
+      <Name>Sistema.Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sistema.Model\Sistema.Model.csproj">
+      <Project>{a26fe57e-3edf-404e-a38b-a482ea50bce4}</Project>
+      <Name>Sistema.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

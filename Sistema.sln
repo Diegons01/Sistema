@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.Controller", "Siste
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sistema.View", "Sistema.View\Sistema.View.csproj", "{2247F9D7-DE47-47B9-8129-ADF99E43C00F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dados.EntityFramework", "Dados.EntityFramework\Dados.EntityFramework.csproj", "{CD9726D2-5AE7-4471-81BF-EF2E73A0D6BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dados.EntityFramework", "Dados.EntityFramework\Dados.EntityFramework.csproj", "{F588C327-8809-4D7D-BA94-0FA4FA53BC9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{2247F9D7-DE47-47B9-8129-ADF99E43C00F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2247F9D7-DE47-47B9-8129-ADF99E43C00F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2247F9D7-DE47-47B9-8129-ADF99E43C00F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD9726D2-5AE7-4471-81BF-EF2E73A0D6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD9726D2-5AE7-4471-81BF-EF2E73A0D6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD9726D2-5AE7-4471-81BF-EF2E73A0D6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD9726D2-5AE7-4471-81BF-EF2E73A0D6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F588C327-8809-4D7D-BA94-0FA4FA53BC9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F588C327-8809-4D7D-BA94-0FA4FA53BC9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F588C327-8809-4D7D-BA94-0FA4FA53BC9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F588C327-8809-4D7D-BA94-0FA4FA53BC9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
