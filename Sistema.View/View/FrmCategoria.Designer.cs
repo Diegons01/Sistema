@@ -28,35 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCategoria));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtCategoria = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btnSalvar = new System.Windows.Forms.ToolStripButton();
-            this.txtCategoria = new System.Windows.Forms.TextBox();
-            this.lblNome = new System.Windows.Forms.Label();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnExcluir = new System.Windows.Forms.ToolStripButton();
             this.groupBox1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblNome);
             this.groupBox1.Controls.Add(this.txtCategoria);
-            this.groupBox1.Location = new System.Drawing.Point(4, 28);
+            this.groupBox1.Location = new System.Drawing.Point(4, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(366, 166);
+            this.groupBox1.Size = new System.Drawing.Size(309, 105);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(30, 48);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 1;
+            this.lblNome.Text = "Nome:";
+            // 
+            // txtCategoria
+            // 
+            this.txtCategoria.Location = new System.Drawing.Point(74, 45);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(152, 20);
+            this.txtCategoria.TabIndex = 0;
+            // 
             // toolStrip1
             // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripLabel1,
+            this.btnExcluir,
             this.btnSalvar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(374, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(319, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -77,28 +99,27 @@
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // txtCategoria
+            // errorProviderTela
             // 
-            this.txtCategoria.Location = new System.Drawing.Point(91, 62);
-            this.txtCategoria.Name = "txtCategoria";
-            this.txtCategoria.Size = new System.Drawing.Size(198, 20);
-            this.txtCategoria.TabIndex = 0;
+            this.errorProviderTela.ContainerControl = this;
             // 
-            // lblNome
+            // btnExcluir
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(47, 65);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 1;
-            this.lblNome.Text = "Nome:";
+            this.btnExcluir.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btnExcluir.Image = global::Sistema.View.Properties.Resources.Excluir;
+            this.btnExcluir.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(23, 22);
+            this.btnExcluir.Text = "Excluir";
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(374, 200);
+            this.ClientSize = new System.Drawing.Size(319, 129);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -108,6 +129,7 @@
             this.groupBox1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +143,7 @@
         private System.Windows.Forms.ToolStripButton btnSalvar;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.TextBox txtCategoria;
+        private System.Windows.Forms.ErrorProvider errorProviderTela;
+        private System.Windows.Forms.ToolStripButton btnExcluir;
     }
 }

@@ -39,10 +39,24 @@ namespace Sistema.View.View
 
         private void btnNovoCategoria_Click(object sender, EventArgs e)
         {
-            using (FrmCategoria frm = new FrmCategoria())
+            if (this.cboCategoria.SelectedItem == null)
             {
-                frm.ShowDialog();
+                using (FrmCategoria frm = new FrmCategoria())
+                {
+                    frm.ShowDialog();
+                    carregaCombobox();
+                }
             }
+            else
+            {
+                Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
+                
+                using (FrmCategoria frm = new FrmCategoria(categoria))
+                {
+                    frm.ShowDialog();
+                    carregaCombobox();               
+                }
+            }            
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -182,15 +196,16 @@ namespace Sistema.View.View
         private void carregaCombobox()
         {
             ServiceCategoria serviceCategoria = new ServiceCategoria();
-
             var obj = serviceCategoria.ListCategoria();
 
             this.cboCategoria.Items.Clear();
-
+           
             foreach (Categoria item in obj)
             {
                 this.cboCategoria.Items.Add(item);
             }
+
+            this.btnNovoCategoria.Image = Properties.Resources.Novo1;
         }
 
         private void carregaGridVendedor()
@@ -252,6 +267,18 @@ namespace Sistema.View.View
 
                 throw;
             }            
+        }
+
+        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cboCategoria.SelectedItem == null)
+            {
+                this.btnNovoCategoria.Image = Properties.Resources.Novo1;                
+            }
+            else
+            {
+                this.btnNovoCategoria.Image = Properties.Resources.Alterar;
+            }
         }
     }
 }

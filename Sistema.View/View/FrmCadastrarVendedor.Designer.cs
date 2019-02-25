@@ -50,19 +50,12 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grvVendedor = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnNovoCategoria = new System.Windows.Forms.Button();
             this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVendedor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendedorBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
             this.SuspendLayout();
@@ -84,6 +77,7 @@
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboCategoria.TabIndex = 10;
+            this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
             // txtSalario
             // 
@@ -131,6 +125,7 @@
             // 
             // toolStrip1
             // 
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripTelaCadastro,
             this.btnExcluir,
@@ -146,8 +141,8 @@
             // toolStripTelaCadastro
             // 
             this.toolStripTelaCadastro.Name = "toolStripTelaCadastro";
-            this.toolStripTelaCadastro.Size = new System.Drawing.Size(86, 22);
-            this.toolStripTelaCadastro.Text = "Novo Cadastro";
+            this.toolStripTelaCadastro.Size = new System.Drawing.Size(58, 22);
+            this.toolStripTelaCadastro.Text = "Vendedor";
             // 
             // btnExcluir
             // 
@@ -243,16 +238,8 @@
             // 
             this.grvVendedor.AllowUserToAddRows = false;
             this.grvVendedor.AllowUserToDeleteRows = false;
-            this.grvVendedor.AutoGenerateColumns = false;
             this.grvVendedor.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.grvVendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvVendedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn,
-            this.telefoneDataGridViewTextBoxColumn,
-            this.salarioDataGridViewTextBoxColumn});
-            this.grvVendedor.DataSource = this.vendedorBindingSource;
             this.grvVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grvVendedor.Location = new System.Drawing.Point(3, 16);
             this.grvVendedor.MultiSelect = false;
@@ -262,46 +249,6 @@
             this.grvVendedor.Size = new System.Drawing.Size(819, 181);
             this.grvVendedor.TabIndex = 0;
             this.grvVendedor.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvVendedor_CellContentDoubleClick);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // salarioDataGridViewTextBoxColumn
-            // 
-            this.salarioDataGridViewTextBoxColumn.DataPropertyName = "Salario";
-            this.salarioDataGridViewTextBoxColumn.HeaderText = "Salario";
-            this.salarioDataGridViewTextBoxColumn.Name = "salarioDataGridViewTextBoxColumn";
-            this.salarioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vendedorBindingSource
-            // 
-            this.vendedorBindingSource.DataSource = typeof(Sistema.Model.Entities.Vendedor);
             // 
             // groupBox1
             // 
@@ -355,7 +302,6 @@
             this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvVendedor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendedorBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
@@ -387,7 +333,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ToolStripLabel toolStripTelaCadastro;
         private System.Windows.Forms.DataGridView grvVendedor;
-        private System.Windows.Forms.BindingSource vendedorBindingSource;
         private System.Windows.Forms.Button btnNovoCategoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;

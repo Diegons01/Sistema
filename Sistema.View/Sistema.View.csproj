@@ -127,7 +127,6 @@
     <None Include="Resources\Alterar.png" />
     <None Include="Resources\disk.png" />
     <None Include="Resources\Novo1.png" />
-    <None Include="Resources\Novo.png" />
     <None Include="Resources\Vendedor.png" />
   </ItemGroup>
   <ItemGroup>

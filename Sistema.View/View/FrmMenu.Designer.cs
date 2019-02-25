@@ -52,8 +52,8 @@
             // 
             this.toolStripTela.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTela.Name = "toolStripTela";
-            this.toolStripTela.Size = new System.Drawing.Size(123, 22);
-            this.toolStripTela.Text = "Bem vindo ao sistema";
+            this.toolStripTela.Size = new System.Drawing.Size(67, 22);
+            this.toolStripTela.Text = "Bem vindo!";
             // 
             // btnCadastrarVendedor
             // 
@@ -89,7 +89,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menu";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
