@@ -6,8 +6,9 @@ namespace Sistema.Model.Entities
     {
         [Key]
         public int Id { get; set; }
-        [StringLength(50)]
+        [StringLength(255)]
         public string Nome { get; set; }
+        [StringLength(255)]
         public string Email { get; set; }
         public int Telefone { get; set; }
         public double Salario { get; set; }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Entities\Vendedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

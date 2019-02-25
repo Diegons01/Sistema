@@ -14,7 +14,8 @@ namespace Dados.EntityFramework
         {
         }
 
-        public virtual DbSet<Vendedor> Vendedor { get; set; }
+        public DbSet<Vendedor> Vendedor { get; set; }
+        public DbSet<Categoria> Categoria { get; set; } 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
