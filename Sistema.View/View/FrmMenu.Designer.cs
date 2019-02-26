@@ -32,10 +32,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTela = new System.Windows.Forms.ToolStripLabel();
-            this.btnCadastrarVendedor = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStripHora = new System.Windows.Forms.ToolStripLabel();
+            this.btnProduto = new System.Windows.Forms.Button();
+            this.btnCadastrarVendedor = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +59,30 @@
             this.toolStripTela.Name = "toolStripTela";
             this.toolStripTela.Size = new System.Drawing.Size(67, 22);
             this.toolStripTela.Text = "Bem vindo!";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.Relogio_Tick);
+            // 
+            // toolStripHora
+            // 
+            this.toolStripHora.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripHora.Name = "toolStripHora";
+            this.toolStripHora.Size = new System.Drawing.Size(49, 22);
+            this.toolStripHora.Text = "00:00:00";
+            // 
+            // btnProduto
+            // 
+            this.btnProduto.Image = global::Sistema.View.Properties.Resources.basket;
+            this.btnProduto.Location = new System.Drawing.Point(257, 70);
+            this.btnProduto.Name = "btnProduto";
+            this.btnProduto.Size = new System.Drawing.Size(152, 111);
+            this.btnProduto.TabIndex = 6;
+            this.btnProduto.Text = "Cadastrar Produto";
+            this.btnProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnProduto.UseVisualStyleBackColor = true;
+            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
             // 
             // btnCadastrarVendedor
             // 
@@ -82,23 +107,12 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.Relogio_Tick);
-            // 
-            // toolStripHora
-            // 
-            this.toolStripHora.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripHora.Name = "toolStripHora";
-            this.toolStripHora.Size = new System.Drawing.Size(49, 22);
-            this.toolStripHora.Text = "00:00:00";
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(849, 399);
+            this.Controls.Add(this.btnProduto);
             this.Controls.Add(this.btnCadastrarVendedor);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.pictureBox1);
@@ -121,5 +135,6 @@
         private System.Windows.Forms.Button btnCadastrarVendedor;
         private System.Windows.Forms.ToolStripLabel toolStripHora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnProduto;
     }
 }

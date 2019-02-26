@@ -15,7 +15,9 @@ namespace Dados.EntityFramework
         }
 
         public DbSet<Vendedor> Vendedor { get; set; }
-        public DbSet<Categoria> Categoria { get; set; } 
+        public DbSet<Categoria> Categoria { get; set; }
+        public DbSet<Produto> Produto { get; set; }
+        public DbSet<Cor> Cor { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

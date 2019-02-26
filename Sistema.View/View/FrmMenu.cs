@@ -42,5 +42,10 @@ namespace Sistema.View.View
             {
             }
         }
+
+        private void btnProduto_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
