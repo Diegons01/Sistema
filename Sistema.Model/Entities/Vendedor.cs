@@ -10,10 +10,16 @@ namespace Sistema.Model.Entities
         public string Nome { get; set; }
         [StringLength(255)]
         public string Email { get; set; }
+        [StringLength(255)]
+        public string Cidade { get; set; }
         public int Telefone { get; set; }
         public double Salario { get; set; }
-        //public Categoria Categoria { get; set; }
-        //public int CategoriaId { get; set; }
-        //public Endereco Endereco { get; set; }
+        public Categoria Categoria { get; set; }
+        public int CategoriaId { get; set; }
+        
+        //public override string ToString()
+        //{
+        //    return Categoria.ToString();
+        //}
     }
 }

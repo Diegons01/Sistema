@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201902251240174_Primeiro.Designer.cs">
       <DependentUpon>201902251240174_Primeiro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902252006501_Juncao_tabelas_Vendedor_Categoria.cs" />
+    <Compile Include="Migrations\201902252006501_Juncao_tabelas_Vendedor_Categoria.Designer.cs">
+      <DependentUpon>201902252006501_Juncao_tabelas_Vendedor_Categoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902260108456_Campo cidade.cs" />
+    <Compile Include="Migrations\201902260108456_Campo cidade.Designer.cs">
+      <DependentUpon>201902260108456_Campo cidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +91,12 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201902251240174_Primeiro.resx">
       <DependentUpon>201902251240174_Primeiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902252006501_Juncao_tabelas_Vendedor_Categoria.resx">
+      <DependentUpon>201902252006501_Juncao_tabelas_Vendedor_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902260108456_Campo cidade.resx">
+      <DependentUpon>201902260108456_Campo cidade.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

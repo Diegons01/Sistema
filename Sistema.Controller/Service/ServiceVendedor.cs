@@ -44,10 +44,24 @@ namespace Sistema.Controller.Service
         public List<Vendedor> ListVendedores()
         {
             model = new Model2019();
-            //return new Model2019().Vendedor.ToList();
-            return model.Vendedor.ToList();
+
+            var list = from vendedor in model.Vendedor.ToList()
+                       join categoria in model.Categoria.ToList() on vendedor.CategoriaId equals categoria.Id
+                       select vendedor;
+
+            return list.ToList();
+
+            //foreach (Vendedor item in obj)
+            //{
+            //    Categoria cat = serviceCategoria.FindCategoria(item.CategoriaId);
+            //    item.Categoria = cat;
+
+            //    vendedores.Add(item);
+            //}
+
+            //return new Model2019().Vendedor.ToList();            
         }
-        
+
         public Vendedor Find(int id)
         {
             model = new Model2019();

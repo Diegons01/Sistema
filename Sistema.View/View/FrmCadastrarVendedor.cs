@@ -78,12 +78,13 @@ namespace Sistema.View.View
 
                         _vendedor.Nome = this.txtNome.Text;
                         _vendedor.Email = this.txtEmail.Text;
+                        _vendedor.Cidade = this.txtCidade.Text;
                         _vendedor.Telefone = int.Parse(this.txtTelefone.Text);
                         _vendedor.Salario = double.Parse(this.txtSalario.Text);
 
                         Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
 
-                        // _vendedor.Id = categoria.Id;
+                        _vendedor.CategoriaId = categoria.Id;
 
                         _serviceVendedor = new ServiceVendedor();
                         _serviceVendedor.Create(_vendedor);
@@ -93,19 +94,23 @@ namespace Sistema.View.View
                     else
                     {
                         _serviceVendedor = new ServiceVendedor();
-                        Vendedor vendedor = _serviceVendedor.Find(_vendedor.Id);
+                        _vendedor = _serviceVendedor.Find(_vendedor.Id);
 
-                        vendedor.Nome = this.txtNome.Text;
-                        vendedor.Email = this.txtEmail.Text;
-                        vendedor.Telefone = int.Parse(this.txtTelefone.Text);
-                        vendedor.Salario = double.Parse(this.txtSalario.Text);
+                        _vendedor.Nome = this.txtNome.Text;
+                        _vendedor.Email = this.txtEmail.Text;
+                        _vendedor.Cidade = this.txtCidade.Text;
+                        _vendedor.Telefone = int.Parse(this.txtTelefone.Text);
+                        _vendedor.Salario = double.Parse(this.txtSalario.Text);
+
+                        Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
+                        _vendedor.CategoriaId = categoria.Id;
 
                         _serviceVendedor.Update();
                     }
 
                     carregaGridVendedor();
                     limparCampos();
-
+                    bloqueiaCampos();
                 }
             }
             catch (Exception)
@@ -154,7 +159,7 @@ namespace Sistema.View.View
             this.txtNome.Clear();
             this.txtNome.Clear();
             this.txtEmail.Clear();
-            this.txtEndereco.Clear();
+            this.txtCidade.Clear();
             this.txtTelefone.Clear();
             this.txtSalario.Clear();
             this.cboCategoria.SelectedItem = null;
@@ -164,7 +169,7 @@ namespace Sistema.View.View
         {
             this.txtNome.Enabled = false;
             this.txtEmail.Enabled = false;
-            this.txtEndereco.Enabled = false;
+            this.txtCidade.Enabled = false;
             this.txtTelefone.Enabled = false;
             this.txtSalario.Enabled = false;
             this.cboCategoria.Enabled = false;
@@ -176,7 +181,7 @@ namespace Sistema.View.View
         {
             this.txtNome.Enabled = true;
             this.txtEmail.Enabled = true;
-            this.txtEndereco.Enabled = true;
+            this.txtCidade.Enabled = true;
             this.txtTelefone.Enabled = true;
             this.txtSalario.Enabled = true;
             this.cboCategoria.Enabled = true;
@@ -188,7 +193,7 @@ namespace Sistema.View.View
         {
             this.txtNome.Text = vendedor.Nome;
             this.txtEmail.Text = vendedor.Email;
-            //this.txtEndereco.Text =  vendedor.
+            this.txtCidade.Text = vendedor.Cidade;
             this.txtTelefone.Text = vendedor.Telefone.ToString();
             this.txtSalario.Text = vendedor.Salario.ToString();
         }
@@ -210,9 +215,9 @@ namespace Sistema.View.View
 
         private void carregaGridVendedor()
         {
-            ServiceVendedor serviceVendedor = new ServiceVendedor();
-
-            this.grvVendedor.DataSource = serviceVendedor.ListVendedores();
+            _serviceVendedor = new ServiceVendedor();             
+            var obj = _serviceVendedor.ListVendedores();
+            this.grvVendedor.DataSource = obj;
         }
 
         private bool valida()
@@ -245,12 +250,30 @@ namespace Sistema.View.View
                 this.txtEmail.Focus();
                 return false;
             }
+            if (this.cboCategoria.SelectedItem == null)
+            {
+                errorProviderTela.SetError(this.cboCategoria, mensagem);
+                this.cboCategoria.Focus();
+                return false;
+            }
 
             return true;
         }
 
-        //Eventos
-        private void grvVendedor_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //Eventos        
+        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cboCategoria.SelectedItem == null)
+            {
+                this.btnNovoCategoria.Image = Properties.Resources.Novo1;                
+            }
+            else
+            {
+                this.btnNovoCategoria.Image = Properties.Resources.Alterar;
+            }
+        }
+
+        private void grvVendedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
@@ -264,20 +287,7 @@ namespace Sistema.View.View
             }
             catch (Exception)
             {
-
                 throw;
-            }            
-        }
-
-        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.cboCategoria.SelectedItem == null)
-            {
-                this.btnNovoCategoria.Image = Properties.Resources.Novo1;                
-            }
-            else
-            {
-                this.btnNovoCategoria.Image = Properties.Resources.Alterar;
             }
         }
     }

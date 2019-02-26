@@ -12,7 +12,7 @@ namespace Sistema.Model.Entities
         [Key]
         public int Id { get; set; }
         [StringLength(255)]
-        public string Nome { get; set; }
+        public string Nome { get; set; }     
 
         public override string ToString()
         {
