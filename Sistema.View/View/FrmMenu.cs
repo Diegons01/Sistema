@@ -26,9 +26,9 @@ namespace Sistema.View.View
                     frm.ShowDialog();
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show("Erro desconhecido" + ex.Message);
             }
         }
 
@@ -45,7 +45,17 @@ namespace Sistema.View.View
 
         private void btnProduto_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                using (FrmCadastrarProduto frm = new FrmCadastrarProduto())
+                {
+                    frm.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro desconhecido" + ex.Message);
+            }
         }
     }
 }

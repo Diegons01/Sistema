@@ -16,5 +16,32 @@ namespace Sistema.View.View
         {
             InitializeComponent();
         }
+
+        // Eventos
+        private void FrmCadastrarProduto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

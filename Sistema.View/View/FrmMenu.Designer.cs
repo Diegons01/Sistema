@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTela = new System.Windows.Forms.ToolStripLabel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStripHora = new System.Windows.Forms.ToolStripLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.btnProduto = new System.Windows.Forms.Button();
             this.btnCadastrarVendedor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,13 +57,8 @@
             // 
             this.toolStripTela.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.toolStripTela.Name = "toolStripTela";
-            this.toolStripTela.Size = new System.Drawing.Size(67, 22);
-            this.toolStripTela.Text = "Bem vindo!";
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.Relogio_Tick);
+            this.toolStripTela.Size = new System.Drawing.Size(79, 22);
+            this.toolStripTela.Text = "    Bem vindo!";
             // 
             // toolStripHora
             // 
@@ -71,6 +66,11 @@
             this.toolStripHora.Name = "toolStripHora";
             this.toolStripHora.Size = new System.Drawing.Size(49, 22);
             this.toolStripHora.Text = "00:00:00";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.Relogio_Tick);
             // 
             // btnProduto
             // 

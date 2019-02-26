@@ -141,6 +141,7 @@
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Sistema.Model.Entities.Produto.datasource" />
     <None Include="Properties\DataSources\Sistema.Model.Entities.Vendedor.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

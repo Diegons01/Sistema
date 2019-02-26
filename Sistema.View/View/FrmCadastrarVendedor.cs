@@ -22,7 +22,8 @@ namespace Sistema.View.View
         {
             InitializeComponent();
         }
-
+        
+        //Eventos  
         private void FrmCadastrarVendedor_Load(object sender, EventArgs e)
         {
             try
@@ -43,19 +44,19 @@ namespace Sistema.View.View
                 using (FrmCategoria frm = new FrmCategoria())
                 {
                     frm.ShowDialog();
-                    carregaCombobox();
                 }
             }
             else
             {
                 Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
-                
+
                 using (FrmCategoria frm = new FrmCategoria(categoria))
                 {
                     frm.ShowDialog();
-                    carregaCombobox();               
                 }
-            }            
+            }
+            carregaCombobox();
+            carregaGridVendedor();
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -96,7 +97,7 @@ namespace Sistema.View.View
                         _vendedor = _serviceVendedor.Find(_vendedor.Id);
 
                         _vendedor.Nome = this.txtNome.Text;
-                        _vendedor.Email = (this.txtEmail.Text != null) ? this.txtEmail.Text : "null@.com" ;
+                        _vendedor.Email = (this.txtEmail.Text != null) ? this.txtEmail.Text : "null@.com";
                         _vendedor.Cidade = this.txtCidade.Text;
                         _vendedor.Telefone = int.Parse(this.txtTelefone.Text);
                         _vendedor.Salario = double.Parse(this.txtSalario.Text);
@@ -151,6 +152,35 @@ namespace Sistema.View.View
             }
         }
 
+        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.cboCategoria.SelectedItem == null)
+            {
+                this.btnNovoCategoria.Image = Properties.Resources.Novo1;
+            }
+            else
+            {
+                this.btnNovoCategoria.Image = Properties.Resources.Alterar;
+            }
+        }
+
+        private void grvVendedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (this.grvVendedor.SelectedRows.Count > 0)
+                {
+                    _vendedor = (Vendedor)this.grvVendedor.CurrentRow.DataBoundItem;
+
+                    editar(_vendedor);
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         //Métodos      
         private void limparCampos()
         {
@@ -182,7 +212,7 @@ namespace Sistema.View.View
             var obj = serviceCategoria.ListCategoria();
 
             this.cboCategoria.Items.Clear();
-           
+
             foreach (Categoria item in obj)
             {
                 this.cboCategoria.Items.Add(item);
@@ -193,11 +223,12 @@ namespace Sistema.View.View
 
         private void carregaGridVendedor()
         {
-            _serviceVendedor = new ServiceVendedor();             
+            _serviceVendedor = new ServiceVendedor();
             var obj = _serviceVendedor.ListVendedores();
             this.grvVendedor.DataSource = obj;
         }
 
+        //Falta implementar mais validações
         private bool valida()
         {
             errorProviderTela.Clear();
@@ -242,36 +273,6 @@ namespace Sistema.View.View
             } //Categoria
 
             return true;
-        }
-
-        //Eventos        
-        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.cboCategoria.SelectedItem == null)
-            {
-                this.btnNovoCategoria.Image = Properties.Resources.Novo1;                
-            }
-            else
-            {
-                this.btnNovoCategoria.Image = Properties.Resources.Alterar;
-            }
-        }
-
-        private void grvVendedor_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (this.grvVendedor.SelectedRows.Count > 0)
-                {
-                    _vendedor = (Vendedor)this.grvVendedor.CurrentRow.DataBoundItem;
-
-                    editar(_vendedor);
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
+        }                      
     }
 }

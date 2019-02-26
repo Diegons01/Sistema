@@ -40,45 +40,45 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTelaCadastro = new System.Windows.Forms.ToolStripLabel();
+            this.btnExcluir = new System.Windows.Forms.ToolStripButton();
+            this.btnEditar = new System.Windows.Forms.ToolStripButton();
+            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
+            this.btnNovo = new System.Windows.Forms.ToolStripButton();
             this.lblTelefone = new System.Windows.Forms.Label();
             this.lblCidade = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.grvVendedor = new System.Windows.Forms.DataGridView();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dtDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.lblData = new System.Windows.Forms.Label();
-            this.txtEstado = new System.Windows.Forms.TextBox();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.btnExcluir = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.btnSalvar = new System.Windows.Forms.ToolStripButton();
-            this.btnNovo = new System.Windows.Forms.ToolStripButton();
-            this.vendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnNovoCategoria = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DataNascimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vendedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtEstado = new System.Windows.Forms.TextBox();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblData = new System.Windows.Forms.Label();
+            this.dtDataNascimento = new System.Windows.Forms.DateTimePicker();
+            this.btnNovoCategoria = new System.Windows.Forms.Button();
+            this.errorProviderTela = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grvVendedor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendedorBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Location = new System.Drawing.Point(418, 27);
+            this.lblCategoria.Location = new System.Drawing.Point(422, 24);
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(58, 13);
             this.lblCategoria.TabIndex = 11;
@@ -104,7 +104,7 @@
             // lblSalario
             // 
             this.lblSalario.AutoSize = true;
-            this.lblSalario.Location = new System.Drawing.Point(418, 89);
+            this.lblSalario.Location = new System.Drawing.Point(438, 87);
             this.lblSalario.Name = "lblSalario";
             this.lblSalario.Size = new System.Drawing.Size(42, 13);
             this.lblSalario.TabIndex = 8;
@@ -156,147 +156,8 @@
             // toolStripTelaCadastro
             // 
             this.toolStripTelaCadastro.Name = "toolStripTelaCadastro";
-            this.toolStripTelaCadastro.Size = new System.Drawing.Size(58, 22);
-            this.toolStripTelaCadastro.Text = "Vendedor";
-            // 
-            // lblTelefone
-            // 
-            this.lblTelefone.AutoSize = true;
-            this.lblTelefone.Location = new System.Drawing.Point(26, 145);
-            this.lblTelefone.Name = "lblTelefone";
-            this.lblTelefone.Size = new System.Drawing.Size(52, 13);
-            this.lblTelefone.TabIndex = 3;
-            this.lblTelefone.Text = "Telefone:";
-            // 
-            // lblCidade
-            // 
-            this.lblCidade.AutoSize = true;
-            this.lblCidade.Location = new System.Drawing.Point(27, 88);
-            this.lblCidade.Name = "lblCidade";
-            this.lblCidade.Size = new System.Drawing.Size(43, 13);
-            this.lblCidade.TabIndex = 2;
-            this.lblCidade.Text = "Cidade:";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(27, 61);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
-            this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "Email:";
-            // 
-            // lblNome
-            // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(27, 28);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(38, 13);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.grvVendedor);
-            this.groupBox2.Location = new System.Drawing.Point(12, 213);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(825, 200);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Lista de Vendedores";
-            // 
-            // grvVendedor
-            // 
-            this.grvVendedor.AllowUserToAddRows = false;
-            this.grvVendedor.AllowUserToDeleteRows = false;
-            this.grvVendedor.AutoGenerateColumns = false;
-            this.grvVendedor.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.grvVendedor.CausesValidation = false;
-            this.grvVendedor.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.grvVendedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            this.grvVendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grvVendedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.Estado,
-            this.DataNascimento,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.Cidade,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.Categoria});
-            this.grvVendedor.DataSource = this.vendedorBindingSource;
-            this.grvVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grvVendedor.Location = new System.Drawing.Point(3, 16);
-            this.grvVendedor.MultiSelect = false;
-            this.grvVendedor.Name = "grvVendedor";
-            this.grvVendedor.ReadOnly = true;
-            this.grvVendedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grvVendedor.Size = new System.Drawing.Size(819, 181);
-            this.grvVendedor.TabIndex = 0;
-            this.grvVendedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvVendedor_CellDoubleClick);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtEstado);
-            this.groupBox1.Controls.Add(this.lblEstado);
-            this.groupBox1.Controls.Add(this.lblData);
-            this.groupBox1.Controls.Add(this.dtDataNascimento);
-            this.groupBox1.Controls.Add(this.btnNovoCategoria);
-            this.groupBox1.Controls.Add(this.lblCategoria);
-            this.groupBox1.Controls.Add(this.cboCategoria);
-            this.groupBox1.Controls.Add(this.txtSalario);
-            this.groupBox1.Controls.Add(this.lblSalario);
-            this.groupBox1.Controls.Add(this.txtTelefone);
-            this.groupBox1.Controls.Add(this.txtCidade);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.txtNome);
-            this.groupBox1.Controls.Add(this.lblTelefone);
-            this.groupBox1.Controls.Add(this.lblCidade);
-            this.groupBox1.Controls.Add(this.lblEmail);
-            this.groupBox1.Controls.Add(this.lblNome);
-            this.groupBox1.Location = new System.Drawing.Point(12, 21);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(825, 184);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            // 
-            // errorProviderTela
-            // 
-            this.errorProviderTela.ContainerControl = this;
-            // 
-            // dtDataNascimento
-            // 
-            this.dtDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDataNascimento.Location = new System.Drawing.Point(486, 57);
-            this.dtDataNascimento.Name = "dtDataNascimento";
-            this.dtDataNascimento.Size = new System.Drawing.Size(121, 20);
-            this.dtDataNascimento.TabIndex = 13;
-            // 
-            // lblData
-            // 
-            this.lblData.AutoSize = true;
-            this.lblData.Location = new System.Drawing.Point(418, 58);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(66, 13);
-            this.lblData.TabIndex = 14;
-            this.lblData.Text = "Nascimento:";
-            // 
-            // txtEstado
-            // 
-            this.txtEstado.Location = new System.Drawing.Point(84, 113);
-            this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(252, 20);
-            this.txtEstado.TabIndex = 16;
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Location = new System.Drawing.Point(26, 116);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(43, 13);
-            this.lblEstado.TabIndex = 15;
-            this.lblEstado.Text = "Estado:";
+            this.toolStripTelaCadastro.Size = new System.Drawing.Size(67, 22);
+            this.toolStripTelaCadastro.Text = "   Vendedor";
             // 
             // btnExcluir
             // 
@@ -342,20 +203,85 @@
             this.btnNovo.Text = "Novo";
             this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
-            // vendedorBindingSource
+            // lblTelefone
             // 
-            this.vendedorBindingSource.DataSource = typeof(Sistema.Model.Entities.Vendedor);
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Location = new System.Drawing.Point(26, 142);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(52, 13);
+            this.lblTelefone.TabIndex = 3;
+            this.lblTelefone.Text = "Telefone:";
             // 
-            // btnNovoCategoria
+            // lblCidade
             // 
-            this.btnNovoCategoria.Image = global::Sistema.View.Properties.Resources.Novo1;
-            this.btnNovoCategoria.Location = new System.Drawing.Point(613, 22);
-            this.btnNovoCategoria.Name = "btnNovoCategoria";
-            this.btnNovoCategoria.Size = new System.Drawing.Size(31, 23);
-            this.btnNovoCategoria.TabIndex = 12;
-            this.btnNovoCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnNovoCategoria.UseVisualStyleBackColor = true;
-            this.btnNovoCategoria.Click += new System.EventHandler(this.btnNovoCategoria_Click);
+            this.lblCidade.AutoSize = true;
+            this.lblCidade.Location = new System.Drawing.Point(35, 88);
+            this.lblCidade.Name = "lblCidade";
+            this.lblCidade.Size = new System.Drawing.Size(43, 13);
+            this.lblCidade.TabIndex = 2;
+            this.lblCidade.Text = "Cidade:";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(43, 57);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.TabIndex = 1;
+            this.lblEmail.Text = "Email:";
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(40, 27);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(38, 13);
+            this.lblNome.TabIndex = 0;
+            this.lblNome.Text = "Nome:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.grvVendedor);
+            this.groupBox2.Location = new System.Drawing.Point(12, 213);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(825, 200);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Lista de Vendedores";
+            // 
+            // grvVendedor
+            // 
+            this.grvVendedor.AllowUserToAddRows = false;
+            this.grvVendedor.AllowUserToDeleteRows = false;
+            this.grvVendedor.AllowUserToOrderColumns = true;
+            this.grvVendedor.AutoGenerateColumns = false;
+            this.grvVendedor.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grvVendedor.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.grvVendedor.CausesValidation = false;
+            this.grvVendedor.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.grvVendedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grvVendedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.Estado,
+            this.Cidade,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.Categoria,
+            this.DataNascimento});
+            this.grvVendedor.DataSource = this.vendedorBindingSource;
+            this.grvVendedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvVendedor.EnableHeadersVisualStyles = false;
+            this.grvVendedor.Location = new System.Drawing.Point(3, 16);
+            this.grvVendedor.MultiSelect = false;
+            this.grvVendedor.Name = "grvVendedor";
+            this.grvVendedor.ReadOnly = true;
+            this.grvVendedor.RowHeadersVisible = false;
+            this.grvVendedor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grvVendedor.Size = new System.Drawing.Size(819, 181);
+            this.grvVendedor.TabIndex = 0;
+            this.grvVendedor.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grvVendedor_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -364,20 +290,6 @@
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // Estado
-            // 
-            this.Estado.DataPropertyName = "Estado";
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            // 
-            // DataNascimento
-            // 
-            this.DataNascimento.DataPropertyName = "DataNascimento";
-            this.DataNascimento.HeaderText = "Nascimento";
-            this.DataNascimento.Name = "DataNascimento";
-            this.DataNascimento.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -393,6 +305,13 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // Cidade
             // 
@@ -422,6 +341,90 @@
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
             // 
+            // DataNascimento
+            // 
+            this.DataNascimento.DataPropertyName = "DataNascimento";
+            this.DataNascimento.HeaderText = "Nascimento";
+            this.DataNascimento.Name = "DataNascimento";
+            this.DataNascimento.ReadOnly = true;
+            // 
+            // vendedorBindingSource
+            // 
+            this.vendedorBindingSource.DataSource = typeof(Sistema.Model.Entities.Vendedor);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtEstado);
+            this.groupBox1.Controls.Add(this.lblEstado);
+            this.groupBox1.Controls.Add(this.lblData);
+            this.groupBox1.Controls.Add(this.dtDataNascimento);
+            this.groupBox1.Controls.Add(this.btnNovoCategoria);
+            this.groupBox1.Controls.Add(this.lblCategoria);
+            this.groupBox1.Controls.Add(this.cboCategoria);
+            this.groupBox1.Controls.Add(this.txtSalario);
+            this.groupBox1.Controls.Add(this.lblSalario);
+            this.groupBox1.Controls.Add(this.txtTelefone);
+            this.groupBox1.Controls.Add(this.txtCidade);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtNome);
+            this.groupBox1.Controls.Add(this.lblTelefone);
+            this.groupBox1.Controls.Add(this.lblCidade);
+            this.groupBox1.Controls.Add(this.lblEmail);
+            this.groupBox1.Controls.Add(this.lblNome);
+            this.groupBox1.Location = new System.Drawing.Point(12, 21);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(825, 184);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            // 
+            // txtEstado
+            // 
+            this.txtEstado.Location = new System.Drawing.Point(84, 113);
+            this.txtEstado.Name = "txtEstado";
+            this.txtEstado.Size = new System.Drawing.Size(252, 20);
+            this.txtEstado.TabIndex = 16;
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(35, 113);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblEstado.TabIndex = 15;
+            this.lblEstado.Text = "Estado:";
+            // 
+            // lblData
+            // 
+            this.lblData.AutoSize = true;
+            this.lblData.Location = new System.Drawing.Point(414, 57);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(66, 13);
+            this.lblData.TabIndex = 14;
+            this.lblData.Text = "Nascimento:";
+            // 
+            // dtDataNascimento
+            // 
+            this.dtDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDataNascimento.Location = new System.Drawing.Point(486, 57);
+            this.dtDataNascimento.Name = "dtDataNascimento";
+            this.dtDataNascimento.Size = new System.Drawing.Size(121, 20);
+            this.dtDataNascimento.TabIndex = 13;
+            // 
+            // btnNovoCategoria
+            // 
+            this.btnNovoCategoria.Image = global::Sistema.View.Properties.Resources.Novo1;
+            this.btnNovoCategoria.Location = new System.Drawing.Point(613, 22);
+            this.btnNovoCategoria.Name = "btnNovoCategoria";
+            this.btnNovoCategoria.Size = new System.Drawing.Size(31, 23);
+            this.btnNovoCategoria.TabIndex = 12;
+            this.btnNovoCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNovoCategoria.UseVisualStyleBackColor = true;
+            this.btnNovoCategoria.Click += new System.EventHandler(this.btnNovoCategoria_Click);
+            // 
+            // errorProviderTela
+            // 
+            this.errorProviderTela.ContainerControl = this;
+            // 
             // FrmCadastrarVendedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,10 +441,10 @@
             this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grvVendedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vendedorBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTela)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.vendedorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -484,13 +487,13 @@
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DataNascimento;
     }
 }
