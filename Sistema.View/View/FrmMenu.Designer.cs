@@ -28,11 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripTela = new System.Windows.Forms.ToolStripLabel();
             this.btnCadastrarVendedor = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStripHora = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -41,7 +44,8 @@
             // 
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripTela});
+            this.toolStripTela,
+            this.toolStripHora});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(849, 25);
@@ -78,6 +82,18 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.Relogio_Tick);
+            // 
+            // toolStripHora
+            // 
+            this.toolStripHora.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripHora.Name = "toolStripHora";
+            this.toolStripHora.Size = new System.Drawing.Size(49, 22);
+            this.toolStripHora.Text = "00:00:00";
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -103,5 +119,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripTela;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnCadastrarVendedor;
+        private System.Windows.Forms.ToolStripLabel toolStripHora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

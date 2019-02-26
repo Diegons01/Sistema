@@ -31,5 +31,16 @@ namespace Sistema.View.View
                 throw;
             }
         }
+
+        private void Relogio_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                this.toolStripHora.Text = DateTime.Now.ToString();
+            }
+            catch (Exception)
+            {
+            }
+        }
     }
 }

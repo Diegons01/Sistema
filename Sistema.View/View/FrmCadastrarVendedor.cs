@@ -27,7 +27,6 @@ namespace Sistema.View.View
         {
             try
             {
-                bloqueiaCampos();
                 carregaGridVendedor();
                 carregaCombobox();
             }
@@ -61,8 +60,6 @@ namespace Sistema.View.View
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            _vendedor = null;
-            liberaCampos();
             limparCampos();
         }
 
@@ -74,20 +71,22 @@ namespace Sistema.View.View
                 {
                     if (_vendedor == null)
                     {
-                        _vendedor = new Vendedor();
+                        Vendedor vendedor = new Vendedor();
 
-                        _vendedor.Nome = this.txtNome.Text;
-                        _vendedor.Email = this.txtEmail.Text;
-                        _vendedor.Cidade = this.txtCidade.Text;
-                        _vendedor.Telefone = int.Parse(this.txtTelefone.Text);
-                        _vendedor.Salario = double.Parse(this.txtSalario.Text);
+                        vendedor.Nome = this.txtNome.Text;
+                        vendedor.Email = this.txtEmail.Text;
+                        vendedor.Cidade = this.txtCidade.Text;
+                        vendedor.Telefone = int.Parse(this.txtTelefone.Text);
+                        vendedor.Salario = double.Parse(this.txtSalario.Text);
+                        vendedor.Estado = this.txtEstado.Text;
+                        vendedor.DataNascimento = DateTime.Parse(this.dtDataNascimento.Text);
 
                         Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
 
-                        _vendedor.CategoriaId = categoria.Id;
+                        vendedor.CategoriaId = categoria.Id;
 
                         _serviceVendedor = new ServiceVendedor();
-                        _serviceVendedor.Create(_vendedor);
+                        _serviceVendedor.Create(vendedor);
 
                         //new ServiceVendedor().Create(_vendedor);
                     }
@@ -97,27 +96,28 @@ namespace Sistema.View.View
                         _vendedor = _serviceVendedor.Find(_vendedor.Id);
 
                         _vendedor.Nome = this.txtNome.Text;
-                        _vendedor.Email = this.txtEmail.Text;
+                        _vendedor.Email = (this.txtEmail.Text != null) ? this.txtEmail.Text : "null@.com" ;
                         _vendedor.Cidade = this.txtCidade.Text;
                         _vendedor.Telefone = int.Parse(this.txtTelefone.Text);
                         _vendedor.Salario = double.Parse(this.txtSalario.Text);
+                        _vendedor.Estado = this.txtEstado.Text;
+                        _vendedor.DataNascimento = DateTime.Parse(this.dtDataNascimento.Text);
 
                         Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
                         _vendedor.CategoriaId = categoria.Id;
 
                         _serviceVendedor.Update();
+                        _vendedor = null;
                     }
 
                     carregaGridVendedor();
                     limparCampos();
-                    bloqueiaCampos();
                 }
             }
             catch (Exception)
             {
                 throw;
             }
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -129,8 +129,6 @@ namespace Sistema.View.View
                     _vendedor = (Vendedor)this.grvVendedor.CurrentRow.DataBoundItem;
 
                     editar(_vendedor);
-
-                    liberaCampos();
                 }
             }
             catch (Exception ex)
@@ -156,6 +154,7 @@ namespace Sistema.View.View
         //Métodos      
         private void limparCampos()
         {
+            _vendedor = null;
             this.txtNome.Clear();
             this.txtNome.Clear();
             this.txtEmail.Clear();
@@ -163,30 +162,7 @@ namespace Sistema.View.View
             this.txtTelefone.Clear();
             this.txtSalario.Clear();
             this.cboCategoria.SelectedItem = null;
-        }
-
-        private void bloqueiaCampos()
-        {
-            this.txtNome.Enabled = false;
-            this.txtEmail.Enabled = false;
-            this.txtCidade.Enabled = false;
-            this.txtTelefone.Enabled = false;
-            this.txtSalario.Enabled = false;
-            this.cboCategoria.Enabled = false;
-            this.btnNovoCategoria.Enabled = false;
-            this.btnSalvar.Enabled = false;
-        }
-
-        private void liberaCampos()
-        {
-            this.txtNome.Enabled = true;
-            this.txtEmail.Enabled = true;
-            this.txtCidade.Enabled = true;
-            this.txtTelefone.Enabled = true;
-            this.txtSalario.Enabled = true;
-            this.cboCategoria.Enabled = true;
-            this.btnNovoCategoria.Enabled = true;
-            this.btnSalvar.Enabled = true;
+            this.txtEstado.Clear();
         }
 
         private void editar(Vendedor vendedor)
@@ -195,7 +171,9 @@ namespace Sistema.View.View
             this.txtEmail.Text = vendedor.Email;
             this.txtCidade.Text = vendedor.Cidade;
             this.txtTelefone.Text = vendedor.Telefone.ToString();
-            this.txtSalario.Text = vendedor.Salario.ToString();
+            this.txtSalario.Text = vendedor.Salario.ToString("F2");
+            this.txtEstado.Text = vendedor.Estado;
+            this.dtDataNascimento.Text = vendedor.DataNascimento.ToString();
         }
 
         private void carregaCombobox()
@@ -231,31 +209,37 @@ namespace Sistema.View.View
                 errorProviderTela.SetError(this.txtNome, mensagem);
                 this.txtNome.Focus();
                 return false;
-            }
-            //if (string.IsNullOrEmpty(this.txtEndereco.Text))
-            //{
-            //    errorProviderTela.SetError(this.txtEndereco, mensagem);
-            //    this.txtEndereco.Focus();
-            //    return false;
-            //}
+            } //Nome
+            if (string.IsNullOrEmpty(this.txtCidade.Text))
+            {
+                errorProviderTela.SetError(this.txtCidade, mensagem);
+                this.txtCidade.Focus();
+                return false;
+            }//Cidade
+            if (string.IsNullOrEmpty(this.txtEstado.Text))
+            {
+                errorProviderTela.SetError(this.txtEstado, mensagem);
+                this.txtEstado.Focus();
+                return false;
+            }//Estado
             if (string.IsNullOrEmpty(this.txtTelefone.Text))
             {
                 errorProviderTela.SetError(this.txtTelefone, mensagem);
                 this.txtTelefone.Focus();
                 return false;
-            }
+            }//Telefone
             if (string.IsNullOrEmpty(this.txtSalario.Text))
             {
                 errorProviderTela.SetError(this.txtSalario, mensagem);
                 this.txtEmail.Focus();
                 return false;
-            }
+            }//Salario
             if (this.cboCategoria.SelectedItem == null)
             {
                 errorProviderTela.SetError(this.cboCategoria, mensagem);
                 this.cboCategoria.Focus();
                 return false;
-            }
+            } //Categoria
 
             return true;
         }
@@ -282,7 +266,6 @@ namespace Sistema.View.View
                     _vendedor = (Vendedor)this.grvVendedor.CurrentRow.DataBoundItem;
 
                     editar(_vendedor);
-                    liberaCampos();
                 }
             }
             catch (Exception)

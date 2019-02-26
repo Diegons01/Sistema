@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201902260108456_Campo cidade.Designer.cs">
       <DependentUpon>201902260108456_Campo cidade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902261334003_Aumentando properties.cs" />
+    <Compile Include="Migrations\201902261334003_Aumentando properties.Designer.cs">
+      <DependentUpon>201902261334003_Aumentando properties.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902260108456_Campo cidade.resx">
       <DependentUpon>201902260108456_Campo cidade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902261334003_Aumentando properties.resx">
+      <DependentUpon>201902261334003_Aumentando properties.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
