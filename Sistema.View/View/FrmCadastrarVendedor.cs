@@ -15,7 +15,6 @@ namespace Sistema.View.View
 {
     public partial class FrmCadastrarVendedor : Form
     {
-        private ServiceVendedor _serviceVendedor;
         private Vendedor _vendedor;
 
         public FrmCadastrarVendedor()
@@ -61,7 +60,7 @@ namespace Sistema.View.View
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            limparCampos();
+            LimparOsCamposTela();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -86,33 +85,31 @@ namespace Sistema.View.View
 
                         vendedor.CategoriaId = categoria.Id;
 
-                        _serviceVendedor = new ServiceVendedor();
-                        _serviceVendedor.Create(vendedor);
-
-                        //new ServiceVendedor().Create(_vendedor);
+                        ServiceVendedor serviceVendedor = new ServiceVendedor();
+                        serviceVendedor.Create(vendedor);
                     }
                     else
                     {
-                        _serviceVendedor = new ServiceVendedor();
-                        _vendedor = _serviceVendedor.Find(_vendedor.Id);
+                        ServiceVendedor serviceVendedor = new ServiceVendedor();
+                        Vendedor vendedor = serviceVendedor.Find(_vendedor.Id);
 
-                        _vendedor.Nome = this.txtNome.Text;
-                        _vendedor.Email = (this.txtEmail.Text != null) ? this.txtEmail.Text : "null@.com";
-                        _vendedor.Cidade = this.txtCidade.Text;
-                        _vendedor.Telefone = int.Parse(this.txtTelefone.Text);
-                        _vendedor.Salario = double.Parse(this.txtSalario.Text);
-                        _vendedor.Estado = this.txtEstado.Text;
-                        _vendedor.DataNascimento = DateTime.Parse(this.dtDataNascimento.Text);
+                        vendedor.Nome = this.txtNome.Text;
+                        vendedor.Email = (this.txtEmail.Text != null) ? this.txtEmail.Text : "null@.com";
+                        vendedor.Cidade = this.txtCidade.Text;
+                        vendedor.Telefone = int.Parse(this.txtTelefone.Text);
+                        vendedor.Salario = double.Parse(this.txtSalario.Text);
+                        vendedor.Estado = this.txtEstado.Text;
+                        vendedor.DataNascimento = DateTime.Parse(this.dtDataNascimento.Text);
 
                         Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
-                        _vendedor.CategoriaId = categoria.Id;
+                        vendedor.CategoriaId = categoria.Id;
 
-                        _serviceVendedor.Update();
+                        serviceVendedor.Update();
                         _vendedor = null;
                     }
 
                     carregaGridVendedor();
-                    limparCampos();
+                    LimparOsCamposTela();
                 }
             }
             catch (Exception)
@@ -142,12 +139,12 @@ namespace Sistema.View.View
         {
             if (this.grvVendedor.SelectedRows.Count > 0)
             {
-                _vendedor = (Vendedor)this.grvVendedor.CurrentRow.DataBoundItem;
+                Vendedor vendedor = (Vendedor)this.grvVendedor.CurrentRow.DataBoundItem;
 
-                _serviceVendedor = new ServiceVendedor();
+                ServiceVendedor serviceVendedor = new ServiceVendedor();
 
-                _serviceVendedor.Delete(_vendedor);
-
+                serviceVendedor.Delete(vendedor);
+                LimparOsCamposTela();
                 carregaGridVendedor();
             }
         }
@@ -182,7 +179,7 @@ namespace Sistema.View.View
         }
 
         //Métodos      
-        private void limparCampos()
+        private void LimparOsCamposTela()
         {
             _vendedor = null;
             this.txtNome.Clear();
@@ -217,8 +214,8 @@ namespace Sistema.View.View
 
         private void carregaGridVendedor()
         {
-            _serviceVendedor = new ServiceVendedor();
-            var obj = _serviceVendedor.ListVendedores();
+            ServiceVendedor serviceVendedor = new ServiceVendedor();
+            var obj = serviceVendedor.ListVendedores();
             this.grvVendedor.DataSource = obj;
         }
 

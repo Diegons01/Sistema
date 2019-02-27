@@ -12,7 +12,7 @@ namespace Sistema.Model.Entities
         public string Nome { get; set; }
         [StringLength(255)]
         public string Descricao { get; set; }
-        public int Quatidade { get; set; }
+        public int Quantidade { get; set; }
         [StringLength(255)]
         public string Placa { get; set; }
         public Cor Cor { get; set; }
@@ -21,7 +21,7 @@ namespace Sistema.Model.Entities
         public int CategoriaId { get; set; }
         public EnumAcessorio Acessorio { get; set; }        
         public double Preco { get; set; }
-        public int Km { get; set; }
+        public int Km { get; set; } 
         public DateTime DataFabricacao { get; set; }
     }
 }

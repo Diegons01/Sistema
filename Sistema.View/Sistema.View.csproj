@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mensagem.cs" />
     <Compile Include="Migration.cs" />
     <Compile Include="Migrations\201902251240174_Primeiro.cs" />
     <Compile Include="Migrations\201902251240174_Primeiro.Designer.cs">
@@ -79,6 +80,10 @@
     <Compile Include="Migrations\201902271309402_Melhorado Properties Produto.cs" />
     <Compile Include="Migrations\201902271309402_Melhorado Properties Produto.Designer.cs">
       <DependentUpon>201902271309402_Melhorado Properties Produto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902271901161_Correcao nome.cs" />
+    <Compile Include="Migrations\201902271901161_Correcao nome.Designer.cs">
+      <DependentUpon>201902271901161_Correcao nome.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -124,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902271309402_Melhorado Properties Produto.resx">
       <DependentUpon>201902271309402_Melhorado Properties Produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271901161_Correcao nome.resx">
+      <DependentUpon>201902271901161_Correcao nome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
