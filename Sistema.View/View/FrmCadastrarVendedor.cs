@@ -204,21 +204,15 @@ namespace Sistema.View.View
             this.txtSalario.Text = vendedor.Salario.ToString("F2");
             this.txtEstado.Text = vendedor.Estado;
             this.dtDataNascimento.Text = vendedor.DataNascimento.ToString();
+            this.cboCategoria.Text = vendedor.Categoria.Nome;
         }
 
         private void carregaCombobox()
         {
             ServiceCategoria serviceCategoria = new ServiceCategoria();
-            var obj = serviceCategoria.ListCategoria();
 
-            this.cboCategoria.Items.Clear();
-
-            foreach (Categoria item in obj)
-            {
-                this.cboCategoria.Items.Add(item);
-            }
-
-            this.btnNovoCategoria.Image = Properties.Resources.Novo1;
+            this.cboCategoria.DataSource = serviceCategoria.ListCategoria();
+            this.cboCategoria.SelectedIndex += -1;
         }
 
         private void carregaGridVendedor()

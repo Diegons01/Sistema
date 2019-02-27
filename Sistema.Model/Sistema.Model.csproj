@@ -45,7 +45,7 @@
     <Compile Include="Entities\Categoria.cs" />
     <Compile Include="Entities\Cor.cs" />
     <Compile Include="Entities\Endereco.cs" />
-    <Compile Include="Entities\Enums\Estado.cs" />
+    <Compile Include="Entities\Enums\EnumAcessorio.cs" />
     <Compile Include="Entities\Produto.cs" />
     <Compile Include="Entities\Vendedor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,23 +10,23 @@ namespace Sistema.Controller.Service
 {
     public class ServiceVendedor
     {
-        private Model2019 model;
+        private Model2019 _dadosEF;
 
         public void Create(Vendedor vendedor)
         {
-            model = new Model2019();
-            model.Vendedor.Add(vendedor);
-            model.SaveChanges();
+            _dadosEF = new Model2019();
+            _dadosEF.Vendedor.Add(vendedor);
+            _dadosEF.SaveChanges();
         }
 
         public void Delete(Vendedor vendedor)
         {
-            model = new Model2019();
+            _dadosEF = new Model2019();
 
-            var obj = model.Vendedor.Find(vendedor.Id);
+            var obj = _dadosEF.Vendedor.Find(vendedor.Id);
 
-            model.Vendedor.Remove(obj);
-            model.SaveChanges();
+            _dadosEF.Vendedor.Remove(obj);
+            _dadosEF.SaveChanges();
         }
 
         public void Update()
@@ -38,15 +38,15 @@ namespace Sistema.Controller.Service
             //obj.Email = vendedor.Email;
             //obj.Telefone = vendedor.Telefone;
             //obj.Salario = vendedor.Salario;
-            model.SaveChanges();
+            _dadosEF.SaveChanges();
         }
 
         public List<Vendedor> ListVendedores()
         {
-            model = new Model2019();
+            _dadosEF = new Model2019();
 
-            var list = from vendedor in model.Vendedor.ToList()
-                       join categoria in model.Categoria.ToList() on vendedor.CategoriaId equals categoria.Id
+            var list = from vendedor in _dadosEF.Vendedor.ToList()
+                       join categoria in _dadosEF.Categoria.ToList() on vendedor.CategoriaId equals categoria.Id
                        select vendedor;
 
             return list.ToList();
@@ -64,8 +64,8 @@ namespace Sistema.Controller.Service
 
         public Vendedor Find(int id)
         {
-            model = new Model2019();
-            return model.Vendedor.Where(x => x.Id == id).FirstOrDefault();
+            _dadosEF = new Model2019();
+            return _dadosEF.Vendedor.Where(x => x.Id == id).FirstOrDefault();
         }
     }
 }

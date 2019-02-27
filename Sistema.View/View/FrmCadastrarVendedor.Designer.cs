@@ -91,7 +91,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(486, 23);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
-            this.cboCategoria.TabIndex = 10;
+            this.cboCategoria.TabIndex = 5;
             this.cboCategoria.SelectedIndexChanged += new System.EventHandler(this.cboCategoria_SelectedIndexChanged);
             // 
             // txtSalario
@@ -99,7 +99,7 @@
             this.txtSalario.Location = new System.Drawing.Point(486, 84);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(121, 20);
-            this.txtSalario.TabIndex = 9;
+            this.txtSalario.TabIndex = 7;
             // 
             // lblSalario
             // 
@@ -115,28 +115,28 @@
             this.txtTelefone.Location = new System.Drawing.Point(84, 142);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(134, 20);
-            this.txtTelefone.TabIndex = 7;
+            this.txtTelefone.TabIndex = 4;
             // 
             // txtCidade
             // 
             this.txtCidade.Location = new System.Drawing.Point(84, 81);
             this.txtCidade.Name = "txtCidade";
             this.txtCidade.Size = new System.Drawing.Size(252, 20);
-            this.txtCidade.TabIndex = 6;
+            this.txtCidade.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(84, 54);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(252, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 1;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(84, 24);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(252, 20);
-            this.txtNome.TabIndex = 4;
+            this.txtNome.TabIndex = 0;
             // 
             // toolStrip1
             // 
@@ -150,7 +150,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(849, 25);
-            this.toolStrip1.TabIndex = 5;
+            this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
             // toolStripTelaCadastro
@@ -382,7 +382,7 @@
             this.txtEstado.Location = new System.Drawing.Point(84, 113);
             this.txtEstado.Name = "txtEstado";
             this.txtEstado.Size = new System.Drawing.Size(252, 20);
-            this.txtEstado.TabIndex = 16;
+            this.txtEstado.TabIndex = 3;
             // 
             // lblEstado
             // 
@@ -408,7 +408,7 @@
             this.dtDataNascimento.Location = new System.Drawing.Point(486, 57);
             this.dtDataNascimento.Name = "dtDataNascimento";
             this.dtDataNascimento.Size = new System.Drawing.Size(121, 20);
-            this.dtDataNascimento.TabIndex = 13;
+            this.dtDataNascimento.TabIndex = 6;
             // 
             // btnNovoCategoria
             // 

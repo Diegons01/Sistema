@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sistema.Model.Entities.Enums
 {
-    public enum Estado : int
+    public enum EnumAcessorio : int
     {
-        Novo = 1,
-        SemiNovo = 2,
-        Repasse = 3
+        Pelicula = 1,
+        CameraRe = 2,
+        Airbag = 3,
+        RodaLiga = 4
     }
 }

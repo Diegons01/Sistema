@@ -10,40 +10,40 @@ namespace Sistema.Controller.Service
 {
     public class ServiceCategoria
     {
-        private Model2019 _model;
+        private Model2019 _dadosEF;
 
         public List<Categoria> ListCategoria()
         {
-            _model = new Model2019();
-            return _model.Categoria.ToList();
+            _dadosEF = new Model2019();
+            return _dadosEF.Categoria.ToList();
         }
 
         public void Create(Categoria categoria)
         {
-            _model = new Model2019();
+            _dadosEF = new Model2019();
 
-            _model.Categoria.Add(categoria);
-            _model.SaveChanges();
+            _dadosEF.Categoria.Add(categoria);
+            _dadosEF.SaveChanges();
         }
 
         public Categoria FindCategoria(int id)
         {
-            _model = new Model2019();
-            return _model.Categoria.FirstOrDefault(x => x.Id == id);
+            _dadosEF = new Model2019();
+            return _dadosEF.Categoria.FirstOrDefault(x => x.Id == id);
         }
 
         public void update()
         {
-            _model.SaveChanges();
+            _dadosEF.SaveChanges();
         }
 
         public void Delete(Categoria categoria)
         {
-            _model = new Model2019();
-            var obj = _model.Categoria.FirstOrDefault(x => x.Id == categoria.Id);
+            _dadosEF = new Model2019();
+            var obj = _dadosEF.Categoria.FirstOrDefault(x => x.Id == categoria.Id);
 
-            _model.Categoria.Remove(obj);
-            _model.SaveChanges();
+            _dadosEF.Categoria.Remove(obj);
+            _dadosEF.SaveChanges();
         }
     }
 }

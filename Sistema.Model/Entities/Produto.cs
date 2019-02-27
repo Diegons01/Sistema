@@ -15,10 +15,13 @@ namespace Sistema.Model.Entities
         public int Quatidade { get; set; }
         [StringLength(255)]
         public string Placa { get; set; }
-        public DateTime DataFabricacao { get; set; }
-        public double Preco { get; set; }
         public Cor Cor { get; set; }
         public int CorId { get; set; }
-        public Estado Estado { get; set; }
+        public Categoria Categoria { get; set; }
+        public int CategoriaId { get; set; }
+        public EnumAcessorio Acessorio { get; set; }        
+        public double Preco { get; set; }
+        public int Km { get; set; }
+        public DateTime DataFabricacao { get; set; }
     }
 }

@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sistema.Model.Entities;
+using Sistema.Controller.Service;
+using Sistema.Model.Entities.Enums;
 
 namespace Sistema.View.View
 {
@@ -20,12 +23,27 @@ namespace Sistema.View.View
         // Eventos
         private void FrmCadastrarProduto_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                carregaComboBox();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
-
+   
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -42,6 +60,22 @@ namespace Sistema.View.View
         {
 
         }
-        
+
+        //Métodos
+        private void carregaComboBox()
+        {
+            ServiceCor serviceCor = new ServiceCor();
+
+            this.cboCor.DataSource = serviceCor.ListCor();
+            this.cboCor.SelectedIndex += -1;
+
+            ServiceCategoria serviceCategoria = new ServiceCategoria();
+
+            this.cboCategoria.DataSource = serviceCategoria.ListCategoria();
+            this.cboCategoria.SelectedIndex += -1;
+
+            this.cboAcessorio.DataSource = Enum.GetValues(typeof(EnumAcessorio));
+            this.cboAcessorio.SelectedIndex += -1;
+        }
     }
 }

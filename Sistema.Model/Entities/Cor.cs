@@ -12,5 +12,10 @@ namespace Sistema.Model.Entities
         [StringLength(255)]
         public string Descricao { get; set; }
         public List<Produto> Produto { get; set; } = new List<Produto>();
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }

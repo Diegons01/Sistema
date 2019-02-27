@@ -76,6 +76,10 @@
     <Compile Include="Migrations\201902261923448_Produto.Designer.cs">
       <DependentUpon>201902261923448_Produto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201902271309402_Melhorado Properties Produto.cs" />
+    <Compile Include="Migrations\201902271309402_Melhorado Properties Produto.Designer.cs">
+      <DependentUpon>201902271309402_Melhorado Properties Produto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -117,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201902261923448_Produto.resx">
       <DependentUpon>201902261923448_Produto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902271309402_Melhorado Properties Produto.resx">
+      <DependentUpon>201902271309402_Melhorado Properties Produto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -181,6 +188,9 @@
       <Project>{a26fe57e-3edf-404e-a38b-a482ea50bce4}</Project>
       <Name>Sistema.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
