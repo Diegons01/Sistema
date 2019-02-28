@@ -16,7 +16,6 @@ namespace Sistema.View.View
     public partial class FrmCategoria : Form
     {
         private Categoria _categoria;
-        private ServiceCategoria _serviceCategoria;
 
         public FrmCategoria()
         {
@@ -28,13 +27,13 @@ namespace Sistema.View.View
             try
             {
                 _categoria = categoria;
-                preencheCampo();                
+                preencheCampo();
             }
             catch (Exception)
             {
                 throw;
             }
-            
+
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -48,20 +47,20 @@ namespace Sistema.View.View
                         Categoria categoria = new Categoria();
                         categoria.Nome = this.txtCategoria.Text;
 
-                        _serviceCategoria = new ServiceCategoria();
-                        _serviceCategoria.Create(categoria);
+                        ServiceCategoria serviceCategoria = new ServiceCategoria();
+                        serviceCategoria.Create(categoria);
                     }
                     else
                     {
-                        _serviceCategoria = new ServiceCategoria();
-                        var obj = _serviceCategoria.FindCategoria(_categoria.Id);
+                        ServiceCategoria serviceCategoria = new ServiceCategoria();
+                        Categoria categoria = serviceCategoria.FindCategoria(_categoria.Id);
 
-                        obj.Nome = this.txtCategoria.Text;
-                        _serviceCategoria.update();
+                        categoria.Nome = this.txtCategoria.Text;
+                        serviceCategoria.update();
                     }
-                    
+
                     this.Close();
-                }                              
+                }
             }
             catch (Exception ex)
             {
@@ -89,15 +88,19 @@ namespace Sistema.View.View
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if (valida())
+            try
             {
                 if (_categoria != null)
                 {
-                    _serviceCategoria = new ServiceCategoria();                    
-                    _serviceCategoria.Delete(_categoria);
+                    ServiceCategoria serviceCategoria = new ServiceCategoria();
+                    serviceCategoria.Delete(_categoria);
                     this.Close();
                 }
             }
+            catch (Exception)
+            {
+                throw;
+            }           
         }
     }
 }

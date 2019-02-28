@@ -36,28 +36,6 @@ namespace Sistema.View.View
             }
         }
 
-        private void btnNovoCategoria_Click(object sender, EventArgs e)
-        {
-            if (this.cboCategoria.SelectedItem == null)
-            {
-                using (FrmCategoria frm = new FrmCategoria())
-                {
-                    frm.ShowDialog();
-                }
-            }
-            else
-            {
-                Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
-
-                using (FrmCategoria frm = new FrmCategoria(categoria))
-                {
-                    frm.ShowDialog();
-                }
-            }
-            carregaCombobox();
-            carregaGridVendedor();
-        }
-
         private void btnNovo_Click(object sender, EventArgs e)
         {
             LimparOsCamposTela();
@@ -126,7 +104,7 @@ namespace Sistema.View.View
                 {
                     _vendedor = (Vendedor)this.grvVendedor.CurrentRow.DataBoundItem;
 
-                    editar(_vendedor);
+                    editar(_vendedor);                    
                 }
             }
             catch (Exception ex)
@@ -146,18 +124,6 @@ namespace Sistema.View.View
                 serviceVendedor.Delete(vendedor);
                 LimparOsCamposTela();
                 carregaGridVendedor();
-            }
-        }
-
-        private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.cboCategoria.SelectedItem == null)
-            {
-                this.btnNovoCategoria.Image = Properties.Resources.Novo1;
-            }
-            else
-            {
-                this.btnNovoCategoria.Image = Properties.Resources.Alterar;
             }
         }
 
@@ -190,6 +156,7 @@ namespace Sistema.View.View
             this.txtSalario.Clear();
             this.cboCategoria.SelectedItem = null;
             this.txtEstado.Clear();
+            this.dtDataNascimento.Text = string.Empty;
         }
 
         private void editar(Vendedor vendedor)

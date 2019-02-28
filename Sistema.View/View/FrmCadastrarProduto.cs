@@ -134,6 +134,66 @@ namespace Sistema.View.View
             }
         }
 
+        private void btnNovaCategoria_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.cboCategoria.SelectedItem == null)
+                {
+                    using (FrmCategoria frm = new FrmCategoria())
+                    {
+                        frm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    Categoria categoria = (Categoria)this.cboCategoria.SelectedItem;
+
+                    using (FrmCategoria frm = new FrmCategoria(categoria))
+                    {
+                        frm.ShowDialog();
+                    }
+                }
+                carregaComboBox();
+                carregaGridProduto();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        private void btnNovaCor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.cboCor.SelectedItem == null)
+                {
+                    using (FrmCor frm = new FrmCor())
+                    {
+                        frm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    Cor cor = (Cor)this.cboCor.SelectedItem;
+
+                    using (FrmCor frm = new FrmCor(cor)) 
+                    {
+                        frm.ShowDialog();
+                    }
+                }
+                
+                carregaComboBox();
+                carregaGridProduto();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         private void grvProduto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (this.grvProduto.SelectedRows.Count > 0)
@@ -141,6 +201,44 @@ namespace Sistema.View.View
                 _produto = (Produto)this.grvProduto.CurrentRow.DataBoundItem;
 
                 editar(_produto);                
+            }
+        }
+
+        private void cboCategoria_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.cboCategoria.SelectedItem == null)
+                {
+                    this.btnNovaCategoria.Image = Properties.Resources.Novo1;
+                }
+                else
+                {
+                    this.btnNovaCategoria.Image = Properties.Resources.Alterar;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }        
+
+        private void cboCor_SelectedValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.cboCor.SelectedItem == null)
+                {
+                    btnNovaCor.Image = Properties.Resources.Novo1;
+                }
+                else
+                {
+                    btnNovaCor.Image = Properties.Resources.Alterar;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
             }
         }
 
@@ -275,7 +373,6 @@ namespace Sistema.View.View
             this.txtPreco.Text = produto.Preco.ToString();
             this.txtKm.Text = produto.Km.ToString();
             this.dtDataFabricacao.Text = produto.DataFabricacao.Date.ToString();
-        }
-       
+        }        
     }
 }

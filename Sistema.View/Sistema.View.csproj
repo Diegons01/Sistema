@@ -106,6 +106,12 @@
     <Compile Include="View\FrmCategoria.Designer.cs">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FrmCor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FrmCor.Designer.cs">
+      <DependentUpon>FrmCor.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <EmbeddedResource Include="View\FrmCategoria.resx">
       <DependentUpon>FrmCategoria.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FrmCor.resx">
+      <DependentUpon>FrmCor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +185,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="construction.ico" />
+    <None Include="Resources\Windows 10.jpg" />
+    <None Include="Resources\FundoSistema.jpg" />
+    <None Include="Resources\loginescuro1.jpg" />
     <None Include="Resources\basket.png" />
     <None Include="Resources\Excluir.png" />
     <None Include="Resources\Alterar.png" />

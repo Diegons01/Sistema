@@ -103,16 +103,6 @@ namespace Sistema.View.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loginescuro3 {
-            get {
-                object obj = ResourceManager.GetObject("loginescuro3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Novo1 {
             get {
                 object obj = ResourceManager.GetObject("Novo1", resourceCulture);
@@ -126,6 +116,16 @@ namespace Sistema.View.Properties {
         internal static System.Drawing.Bitmap Vendedor {
             get {
                 object obj = ResourceManager.GetObject("Vendedor", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Windows10 {
+            get {
+                object obj = ResourceManager.GetObject("Windows10", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

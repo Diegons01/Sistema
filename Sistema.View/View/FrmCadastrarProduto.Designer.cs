@@ -47,7 +47,6 @@
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descricaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quatidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.placaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataFabricacaoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +62,7 @@
             this.cboAcessorio = new System.Windows.Forms.ComboBox();
             this.txtKm = new System.Windows.Forms.TextBox();
             this.lblKm = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnNovaCategoria = new System.Windows.Forms.Button();
             this.cboCor = new System.Windows.Forms.ComboBox();
             this.btnNovaCor = new System.Windows.Forms.Button();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
@@ -208,15 +207,14 @@
             this.grvProduto.AllowUserToDeleteRows = false;
             this.grvProduto.AutoGenerateColumns = false;
             this.grvProduto.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.grvProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.grvProduto.CausesValidation = false;
-            this.grvProduto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.grvProduto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.grvProduto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grvProduto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
             this.descricaoDataGridViewTextBoxColumn,
-            this.quatidadeDataGridViewTextBoxColumn,
             this.placaDataGridViewTextBoxColumn,
             this.dataFabricacaoDataGridViewTextBoxColumn,
             this.precoDataGridViewTextBoxColumn,
@@ -225,6 +223,7 @@
             this.acessorioDataGridViewTextBoxColumn});
             this.grvProduto.DataSource = this.produtoBindingSource;
             this.grvProduto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grvProduto.EnableHeadersVisualStyles = false;
             this.grvProduto.Location = new System.Drawing.Point(3, 16);
             this.grvProduto.MultiSelect = false;
             this.grvProduto.Name = "grvProduto";
@@ -256,13 +255,6 @@
             this.descricaoDataGridViewTextBoxColumn.HeaderText = "Descricao";
             this.descricaoDataGridViewTextBoxColumn.Name = "descricaoDataGridViewTextBoxColumn";
             this.descricaoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // quatidadeDataGridViewTextBoxColumn
-            // 
-            this.quatidadeDataGridViewTextBoxColumn.DataPropertyName = "Quatidade";
-            this.quatidadeDataGridViewTextBoxColumn.HeaderText = "Quatidade";
-            this.quatidadeDataGridViewTextBoxColumn.Name = "quatidadeDataGridViewTextBoxColumn";
-            this.quatidadeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // placaDataGridViewTextBoxColumn
             // 
@@ -318,6 +310,7 @@
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(121, 21);
             this.cboCategoria.TabIndex = 5;
+            this.cboCategoria.SelectedValueChanged += new System.EventHandler(this.cboCategoria_SelectedValueChanged);
             // 
             // txtPreco
             // 
@@ -341,7 +334,7 @@
             this.groupBox1.Controls.Add(this.cboAcessorio);
             this.groupBox1.Controls.Add(this.txtKm);
             this.groupBox1.Controls.Add(this.lblKm);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnNovaCategoria);
             this.groupBox1.Controls.Add(this.cboCor);
             this.groupBox1.Controls.Add(this.txtPlaca);
             this.groupBox1.Controls.Add(this.lblPlaca);
@@ -399,15 +392,16 @@
             this.lblKm.TabIndex = 19;
             this.lblKm.Text = "Km:";
             // 
-            // button1
+            // btnNovaCategoria
             // 
-            this.button1.Image = global::Sistema.View.Properties.Resources.Novo1;
-            this.button1.Location = new System.Drawing.Point(571, 21);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 23);
-            this.button1.TabIndex = 18;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNovaCategoria.Image = global::Sistema.View.Properties.Resources.Novo1;
+            this.btnNovaCategoria.Location = new System.Drawing.Point(571, 21);
+            this.btnNovaCategoria.Name = "btnNovaCategoria";
+            this.btnNovaCategoria.Size = new System.Drawing.Size(31, 23);
+            this.btnNovaCategoria.TabIndex = 18;
+            this.btnNovaCategoria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnNovaCategoria.UseVisualStyleBackColor = true;
+            this.btnNovaCategoria.Click += new System.EventHandler(this.btnNovaCategoria_Click);
             // 
             // cboCor
             // 
@@ -417,6 +411,7 @@
             this.cboCor.Name = "cboCor";
             this.cboCor.Size = new System.Drawing.Size(121, 21);
             this.cboCor.TabIndex = 4;
+            this.cboCor.SelectedValueChanged += new System.EventHandler(this.cboCor_SelectedValueChanged);
             // 
             // btnNovaCor
             // 
@@ -427,6 +422,7 @@
             this.btnNovaCor.TabIndex = 12;
             this.btnNovaCor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNovaCor.UseVisualStyleBackColor = true;
+            this.btnNovaCor.Click += new System.EventHandler(this.btnNovaCor_Click);
             // 
             // txtQuantidade
             // 
@@ -539,7 +535,7 @@
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.ComboBox cboCor;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnNovaCategoria;
         private System.Windows.Forms.TextBox txtKm;
         private System.Windows.Forms.Label lblKm;
         private System.Windows.Forms.Label lblAcessorio;
